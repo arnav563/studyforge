@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b1020">
+<title>StudyForge — Class 11 JEE Practice</title>
+<style>
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#18243b;--line:#293750;--text:#edf3ff;--muted:#9aabc7;--blue:#78aaff;--green:#75ddb0;--red:#ff9d9d}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 0,#162747 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+button,select,input{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 15px;background:var(--blue);color:#071122;font-weight:750}button.secondary{background:#24324c;color:var(--text);border:1px solid var(--line)}button:disabled{opacity:.4;cursor:not-allowed}
+.wrap{max-width:1180px;margin:auto;padding:24px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px}.brand{display:flex;gap:12px;align-items:center}.logo{height:46px;width:46px;display:grid;place-items:center;border-radius:14px;background:#243b70;font-size:24px}.brand h1{font-size:22px;margin:0}.brand p{margin:0;color:var(--muted);font-size:12px;letter-spacing:1.3px}.pill{border:1px solid #3d5274;color:#b8d2ff;border-radius:99px;padding:5px 10px;font-size:12px}
+.hero{padding:28px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(125deg,#172746,#111a2c 68%);margin-bottom:24px}.eyebrow{color:var(--blue);font-size:12px;font-weight:800;letter-spacing:1.5px}.hero h2{font-size:clamp(25px,4vw,38px);line-height:1.15;margin:10px 0}.hero p{color:#b5c3db;max-width:680px;margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}.stat{padding:14px;background:#202f4a;border-radius:12px}.stat strong{display:block}.stat span{font-size:12px;color:#afbdd4}
+.layout{display:grid;grid-template-columns:300px 1fr;gap:20px;align-items:start}.panel{background:rgba(18,26,45,.96);border:1px solid var(--line);border-radius:16px;padding:18px}.panel h3{margin:0 0 14px;font-size:17px}.field{display:grid;gap:7px;margin-bottom:14px}.field label{font-size:12px;color:var(--muted);font-weight:700}.field select{width:100%;background:#0e1729;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px}
+.subjects{display:flex;gap:8px;margin-bottom:16px}.subject{flex:1;padding:10px 5px;background:#17233a;color:#c4d1e8;border:1px solid var(--line)}.subject.active{background:#294773;color:white;border-color:#6c9ee9}.topic-list{display:grid;gap:8px}.topic{display:flex;align-items:center;gap:10px;text-align:left;width:100%;background:#111b2e;color:var(--text);border:1px solid var(--line);padding:11px}.topic.active{background:#20385d;border-color:#6c9ee9}.num{width:29px;height:29px;display:grid;place-items:center;background:#263550;border-radius:8px;font-size:12px}.topic small{display:block;color:var(--muted);font-weight:400}.main-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:16px}.main-head h2{margin:0;font-size:22px}.muted{color:var(--muted)}.topic-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}.tag{background:#202e47;color:#c6d7f2;padding:5px 9px;border-radius:8px;font-size:12px}.question-card{background:#0e1729;border:1px solid var(--line);border-radius:14px;padding:20px}.q-top{display:flex;justify-content:space-between;gap:10px;color:var(--blue);font-size:12px;font-weight:800;margin-bottom:14px}.question-card h3{font-size:18px;line-height:1.5;margin:0 0 18px}.options{display:grid;gap:9px}.option{display:flex;gap:10px;align-items:flex-start;text-align:left;background:#17233a;color:var(--text);border:1px solid #2a3a56;border-radius:11px;padding:12px;font-weight:500}.option:hover{border-color:#6e9de6}.option.selected{background:#203b63;border-color:#78aaff}.option.correct{border-color:var(--green);background:#14362f}.option.wrong{border-color:var(--red);background:#3b222b}.letter{flex:none;width:24px;height:24px;display:grid;place-items:center;border-radius:7px;background:#2a3b57;font-size:12px}.explanation{margin-top:14px;padding:12px;border-radius:10px;background:#142c2a;color:#b9f0d8}.controls{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.progress{height:5px;background:#273650;border-radius:99px;overflow:hidden;margin:10px 0 18px}.progress span{display:block;height:100%;background:var(--blue);width:0;transition:width .2s}.result{padding:20px;background:#101d30;border:1px solid var(--line);border-radius:14px;margin-top:16px}.score{font-size:34px;font-weight:850}.hidden{display:none!important}.foot{color:#72839f;font-size:12px;margin-top:20px;text-align:center}.empty{padding:24px;text-align:center;color:var(--muted)}
+@media(max-width:800px){.wrap{padding:14px}.layout{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.top{align-items:flex-start}.hero{padding:20px}.main-head{align-items:flex-start;flex-direction:column}.controls button{flex:1}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">✦</div><div><h1>StudyForge</h1><p>CLASS 11 · PCM · JEE PRACTICE</p></div></div>
+    <span class="pill">STUDENT WORKSPACE</span>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">YOUR STUDY SPACE</div>
+    <h2>Practice smarter.<br>Improve every day.</h2>
+    <p>Build confidence one topic at a time. Choose a subject, open a topic, and practise with JEE-style scoring and instant explanations.</p>
+    <div class="stats">
+      <div class="stat"><strong>3 Subjects</strong><span>Physics · Chemistry · Mathematics</span></div>
+      <div class="stat"><strong>Topic-wise</strong><span>Focused practice sessions</span></div>
+      <div class="stat"><strong>+4 / −1</strong><span>Correct / incorrect MCQs</span></div>
+    </div>
+  </section>
+  <div class="layout">
+    <aside class="panel">
+      <h3>Choose your subject</h3>
+      <div class="subjects" id="subjects">
+        <button class="subject active" data-subject="Physics">PHY</button>
+        <button class="subject" data-subject="Chemistry">CHEM</button>
+        <button class="subject" data-subject="Mathematics">MATH</button>
+      </div>
+      <div class="field"><label for="chapterSelect">CHAPTER</label><select id="chapterSelect"></select></div>
+      <h3>Topics</h3>
+      <div class="topic-list" id="topicList"></div>
+    </aside>
+    <main class="panel">
+      <div id="setupView">
+        <div class="main-head"><div><div class="eyebrow">READY WHEN YOU ARE</div><h2 id="topicTitle">Equations of Motion</h2></div><span class="pill" id="questionCount">3 sample questions</span></div>
+        <p class="muted" id="topicDescription">Practise the core ideas, then review every answer.</p>
+        <div class="topic-meta"><span class="tag" id="subjectTag">Physics</span><span class="tag" id="chapterTag">Motion in a Straight Line</span><span class="tag">JEE Main-style MCQ</span></div>
+        <div class="field"><label for="sessionSize">QUESTIONS IN THIS SESSION</label><select id="sessionSize"><option value="all">All available sample questions</option><option value="10">10 questions (when bank is expanded)</option><option value="25">25 questions (when bank is expanded)</option><option value="50">50 questions (when bank is expanded)</option></select></div>
+        <button id="startBtn">Start practice →</button>
+        <div class="result"><strong>Marking scheme</strong><p class="muted">Correct answer: +4 · Incorrect answer: −1 · Unanswered: 0</p><p class="muted">This starter project contains sample questions to demonstrate the system. Add more verified questions to the question bank as you build out the site.</p></div>
+      </div>
+      <div id="quizView" class="hidden">
+        <div class="main-head"><div><div class="eyebrow">PRACTICE SESSION</div><h2 id="quizTopic">Topic practice</h2></div><span class="pill" id="qCounter">Question 1 of 3</span></div>
+        <div class="progress"><span id="progressBar"></span></div>
+        <div class="question-card">
+          <div class="q-top"><span id="qSubject">PHYSICS</span><span>+4 CORRECT · −1 INCORRECT</span></div>
+          <h3 id="questionText"></h3>
+          <div class="options" id="options"></div>
+          <div id="explanation" class="explanation hidden"></div>
+        </div>
+        <div class="controls"><button class="secondary" id="prevBtn">← Previous</button><button id="nextBtn">Next →</button></div>
+        <div class="controls"><button class="secondary" id="finishBtn">Submit session</button><button class="secondary" id="backBtn">Exit practice</button></div>
+      </div>
+      <div id="resultView" class="hidden">
+        <div class="eyebrow">SESSION COMPLETE</div><h2>Your results</h2>
+        <div class="result"><div class="score" id="finalScore">0 / 12</div><p id="resultSummary" class="muted"></p><div class="stats"><div class="stat"><strong id="correctCount">0</strong><span>Correct</span></div><div class="stat"><strong id="wrongCount">0</strong><span>Incorrect</span></div><div class="stat"><strong id="skipCount">0</strong><span>Unanswered</span></div></div></div>
+        <h3 style="margin-top:22px">Answer review</h3><div id="reviewList" class="topic-list"></div>
+        <div class="controls"><button id="retryBtn">Try again</button><button class="secondary" id="homeBtn">Back to topics</button></div>
+      </div>
+    </main>
+  </div>
+  <div class="foot">StudyForge starter project · Progress is kept in this browser only; no student accounts or cloud database are connected yet.</div>
+</div>
+<script>
+const curriculum = {
+ Physics:[
+  {name:"Units and Measurements",topics:["Dimensions","Significant Figures","Errors in Measurement"]},
+  {name:"Motion in a Straight Line",topics:["Position and Displacement","Velocity and Acceleration","Equations of Motion","Graphs of Motion"]},
+  {name:"Motion in a Plane",topics:["Vectors","Projectile Motion","Relative Velocity"]},
+  {name:"Laws of Motion",topics:["Newton's Laws","Friction","Connected Bodies"]},
+  {name:"Work, Energy and Power",topics:["Work-Energy Theorem","Power","Collisions"]},
+  {name:"System of Particles and COM",topics:["Centre of Mass","Momentum Conservation","Collisions"]},
+  {name:"Gravitation",topics:["Gravitational Field","Satellites","Escape Velocity"]}
+ ],
+ Chemistry:[
+  {name:"Some Basic Concepts",topics:["Mole Concept","Stoichiometry","Concentration Terms"]},
+  {name:"Structure of Atom",topics:["Bohr Model","Quantum Numbers","Electronic Configuration"]},
+  {name:"Classification of Elements",topics:["Periodic Trends","Atomic Radius","Ionisation Enthalpy"]},
+  {name:"Chemical Bonding",topics:["Lewis Structures","Formal Charge","VSEPR Theory","Hybridisation"]},
+  {name:"Thermodynamics",topics:["First Law","Enthalpy","Hess's Law"]},
+  {name:"Equilibrium",topics:["Chemical Equilibrium","Ionic Equilibrium","pH"]}
+ ],
+ Mathematics:[
+  {name:"Sets",topics:["Types of Sets","Set Operations","Venn Diagrams"]},
+  {name:"Trigonometric Functions",topics:["Trigonometric Identities","Graphs","Trigonometric Equations"]},
+  {name:"Complex Numbers",topics:["Algebra of Complex Numbers","Modulus and Argument"]},
+  {name:"Permutations and Combinations",topics:["Fundamental Principle","Permutations","Combinations"]},
+  {name:"Sequences and Series",topics:["AP","GP","Arithmetic-Geometric Series"]},
+  {name:"Straight Lines",topics:["Slope","Line Equations","Distance Formula"]},
+  {name:"Limits and Derivatives",topics:["Limits","First Principles","Derivatives"]}
+ ]};
+const bank = {
+ "Physics|Motion in a Straight Line|Equations of Motion":[
+  {q:"A particle starts from rest and moves with a constant acceleration of 2 m/s². What is its velocity after 5 s?",o:["5 m/s","10 m/s","15 m/s","20 m/s"],a:1,e:"Using v = u + at, with u = 0, a = 2 m/s² and t = 5 s, v = 10 m/s."},
+  {q:"A car increases its speed uniformly from 10 m/s to 20 m/s in 5 s. What is its acceleration?",o:["1 m/s²","2 m/s²","5 m/s²","10 m/s²"],a:1,e:"Acceleration = (v − u)/t = (20 − 10)/5 = 2 m/s²."},
+  {q:"The slope of a velocity-time graph represents which physical quantity?",o:["Displacement","Speed","Acceleration","Momentum"],a:2,e:"The slope of a velocity-time graph is change in velocity divided by time: acceleration."}
+ ],
+ "Physics|Motion in a Straight Line|Velocity and Acceleration":[
+  {q:"A runner covers 100 m in 20 s at constant speed. What is the speed?",o:["2 m/s","4 m/s","5 m/s","10 m/s"],a:2,e:"Speed = distance/time = 100/20 = 5 m/s."},
+  {q:"Which quantity can be negative in one-dimensional motion?",o:["Distance travelled","Speed","Displacement","Elapsed time"],a:2,e:"Displacement has direction, so its sign depends on the chosen positive direction."}
+ ],
+ "Chemistry|Some Basic Concepts|Mole Concept":[
+  {q:"How many moles are present in 18 g of water? (Molar mass = 18 g mol⁻¹)",o:["0.5 mol","1 mol","2 mol","18 mol"],a:1,e:"Moles = given mass / molar mass = 18/18 = 1 mol."},
+  {q:"The approximate number of entities in one mole is:",o:["6.022 × 10²⁰","6.022 × 10²³","3.011 × 10²³","1.602 × 10⁻¹⁹"],a:1,e:"One mole contains Avogadro's number, approximately 6.022 × 10²³ entities."}
+ ],
+ "Chemistry|Chemical Bonding|VSEPR Theory":[
+  {q:"According to VSEPR theory, the molecular shape of CH₄ is:",o:["Linear","Trigonal planar","Tetrahedral","Bent"],a:2,e:"CH₄ has four bonding pairs and no lone pairs around carbon, giving a tetrahedral shape."}
+ ],
+ "Mathematics|Permutations and Combinations|Combinations":[
+  {q:"In how many ways can 2 students be selected from 5 students?",o:["10","20","25","5"],a:0,e:"Order does not matter, so the number is ⁵C₂ = 5×4/(2×1) = 10."},
+  {q:"What is the value of ⁶C₁?",o:["1","6","15","30"],a:1,e:"Choosing one item from six can be done in 6 ways, so ⁶C₁ = 6."}
+ ]
+};
+let subject="Physics", chapter="Motion in a Straight Line", topic="Equations of Motion", questions=[], answers={}, index=0;
+const $=id=>document.getElementById(id);
+function key(){return `${subject}|${chapter}|${topic}`}
+function getChapters(){return curriculum[subject]}
+function renderChapters(){
+ const select=$("chapterSelect");select.innerHTML="";
+ getChapters().forEach(c=>{const o=document.createElement("option");o.value=c.name;o.textContent=c.name;select.appendChild(o)});
+ if(!getChapters().some(c=>c.name===chapter))chapter=getChapters()[0].name;
+ select.value=chapter;renderTopics();
+}
+function renderTopics(){
+ const c=getChapters().find(x=>x.name===chapter);const list=$("topicList");list.innerHTML="";
+ c.topics.forEach((t,i)=>{const b=document.createElement("button");b.className="topic"+(t===topic?" active":"");b.innerHTML=`<span class="num">${String(i+1).padStart(2,"0")}</span><span>${escapeHtml(t)}<small>${(bank[`${subject}|${chapter}|${t}`]||[]).length} sample questions · target 50</small></span>`;b.onclick=()=>{topic=t;renderTopics();renderSetup()};list.appendChild(b)});
+ renderSetup();
+}
+function renderSetup(){
+ $("topicTitle").textContent=topic;$("subjectTag").textContent=subject;$("chapterTag").textContent=chapter;
+ const n=(bank[key()]||[]).length;$("questionCount").textContent=`${n} sample question${n===1?"":"s"}`;
+ $("topicDescription").textContent=n?"Start a practice session and review explanations after answering.":"This topic is mapped in the curriculum. Add verified questions to its question bank to enable practice.";
+ $("startBtn").disabled=n===0;
+}
+function show(view){["setupView","quizView","resultView"].forEach(id=>$(id).classList.toggle("hidden",id!==view))}
+function start(){questions=[...(bank[key()]||[])];answers={};index=0;renderQuestion();show("quizView")}
+function renderQuestion(){
+ const q=questions[index];$("quizTopic").textContent=topic;$("qCounter").textContent=`Question ${index+1} of ${questions.length}`;$("qSubject").textContent=subject.toUpperCase();$("questionText").textContent=q.q;
+ $("progressBar").style.width=`${((index+1)/questions.length)*100}%`;
+ const opts=$("options");opts.innerHTML="";
+ q.o.forEach((o,i)=>{const b=document.createElement("button");b.className="option"+(answers[index]===i?" selected":"");b.innerHTML=`<span class="letter">${"ABCD"[i]}</span><span>${escapeHtml(o)}</span>`;b.onclick=()=>{answers[index]=i;renderQuestion()};opts.appendChild(b)});
+ $("explanation").classList.add("hidden");$("prevBtn").disabled=index===0;$("nextBtn").textContent=index===questions.length-1?"Last question":"Next →";
+}
+function submit(){
+ const correct=questions.filter((q,i)=>answers[i]===q.a).length;
+ const wrong=questions.filter((q,i)=>answers[i]!==undefined&&answers[i]!==q.a).length;
+ const skipped=questions.length-correct-wrong;const score=correct*4-wrong;
+ $("finalScore").textContent=`${score} / ${questions.length*4}`;$("resultSummary").textContent=`${Math.round(correct/questions.length*100)}% correct · ${correct} correct, ${wrong} incorrect, ${skipped} unanswered.`;
+ $("correctCount").textContent=correct;$("wrongCount").textContent=wrong;$("skipCount").textContent=skipped;
+ const list=$("reviewList");list.innerHTML="";
+ questions.forEach((q,i)=>{const card=document.createElement("div");card.className="panel";card.style.padding="14px";card.innerHTML=`<strong>${i+1}. ${escapeHtml(q.q)}</strong><p class="muted">Your answer: ${answers[i]===undefined?"Unanswered":escapeHtml(q.o[answers[i]])}</p><p style="color:${answers[i]===q.a?"var(--green)":answers[i]===undefined?"var(--muted)":"var(--red)"}">Correct answer: ${escapeHtml(q.o[q.a])} · ${answers[i]===q.a?"+4":answers[i]===undefined?"0":"−1"} marks</p><p class="muted">${escapeHtml(q.e)}</p>`;list.appendChild(card)});
+ show("resultView");
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+$("subjects").addEventListener("click",e=>{const b=e.target.closest("[data-subject]");if(!b)return;subject=b.dataset.subject;document.querySelectorAll(".subject").forEach(x=>x.classList.toggle("active",x===b));chapter=curriculum[subject][0].name;topic=curriculum[subject][0].topics[0];renderChapters()});
+$("chapterSelect").addEventListener("change",e=>{chapter=e.target.value;topic=getChapters().find(c=>c.name===chapter).topics[0];renderTopics()});
+$("startBtn").onclick=start;$("prevBtn").onclick=()=>{if(index>0){index--;renderQuestion()}};$("nextBtn").onclick=()=>{if(index<questions.length-1){index++;renderQuestion()}};
+$("finishBtn").onclick=()=>{if(confirm("Submit this practice session? Unanswered questions will receive 0 marks."))submit()};
+$("backBtn").onclick=()=>show("setupView");$("retryBtn").onclick=start;$("homeBtn").onclick=()=>{show("setupView");renderSetup()};
+renderChapters();
+</script>
+</body>
+</html>
